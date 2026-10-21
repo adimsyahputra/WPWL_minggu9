@@ -1,0 +1,149 @@
+/* DataFetcher.module.css */
+.container {
+max-width: 800px;
+margin: 2rem auto;
+padding: 2rem;
+background: white;
+border-radius: 12px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+.title {
+text-align: center;
+color: #2c3e50;
+font-size: 2.2rem;
+margin-bottom: 2rem;
+font-weight: 700;
+}
+.controls {
+display: flex;
+gap: 1rem;
+margin-bottom: 2rem;
+flex-wrap: wrap;
+}
+.select {
+padding: 0.75rem 1rem;
+border: 2px solid #e0e0e0;
+border-radius: 8px;
+font-size: 1rem;
+background: white;
+cursor: pointer;
+min-width: 200px;
+}
+.select:focus {
+outline: none;
+border-color: #3498db;
+box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+.button {
+padding: 0.75rem 1.5rem;
+background: #3498db;
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 1rem;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+.button:hover {
+background: #2980b9;
+transform: translateY(-2px);
+}
+.button:disabled {
+background: #bdc3c7;
+cursor: not-allowed;
+transform: none;
+}
+.loadingState {
+text-align: center;
+padding: 3rem;
+color: #7f8c8d;
+}
+.loadingSpinner {
+width: 40px;
+height: 40px;
+border: 3px solid #f3f3f3;
+border-top: 3px solid #3498db;
+border-radius: 50%;
+animation: spin 1s linear infinite;
+margin: 0 auto 1rem;
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+.errorState {
+background: #fdf2f2;
+color: #e74c3c;
+padding: 2rem;
+border-radius: 8px;
+border: 1px solid #f5c6cb;
+text-align: center;
+margin-bottom: 2rem;
+}
+.retryButton {
+margin-top: 1rem;
+padding: 0.5rem 1rem;
+background: #e74c3c;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+.retryButton:hover {
+background: #c0392b;
+}
+.stats {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 1rem;
+margin-bottom: 2rem;
+}
+.statCard {
+background: #f8f9fa;
+padding: 1.5rem;
+border-radius: 8px;
+text-align: center;
+border-left: 4px solid #3498db;
+}
+.statNumber {
+font-size: 2rem;
+font-weight: bold;
+color: #3498db;
+margin-bottom: 0.5rem;
+}
+.statLabel {
+color: #7f8c8d;
+font-size: 0.9rem;
+}
+.apiInfo {
+background: #e7f3ff;
+padding: 1.5rem;
+border-radius: 8px;
+margin-bottom: 2rem;
+border-left: 4px solid #3498db;
+}
+.apiUrl {
+font-family: monospace;
+background: white;
+padding: 0.5rem;
+border-radius: 4px;
+margin: 0.5rem 0;
+display: inline-block;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+.container {
+margin: 1rem;
+padding: 1.5rem;
+}
+.controls {
+flex-direction: column;
+}
+.select {
+min-width: 100%;
+}
+.stats {
+grid-template-columns: 1fr;
+}
+}

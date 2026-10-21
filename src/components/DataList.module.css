@@ -1,0 +1,133 @@
+.listContainer { margin-top: 2rem; }
+.listHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.listTitle { color: #2c3e50; font-size: 1.5rem; font-weight: 600; margin: 0; }
+.searchContainer { display: flex; gap: 1rem; flex-wrap: wrap; }
+.searchInput {
+  padding: .75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-width: 250px;
+}
+.searchInput:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, .1);
+}
+.filterSelect {
+  padding: .75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  min-width: 150px;
+}
+.filterSelect:focus { outline: none; border-color: #3498db; }
+.dataGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.dataCard {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all .3s ease;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInUp .5s ease-out;
+}
+.dataCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+  border-color: #3498db;
+}
+.dataCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: #3498db;
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+.dataCard:hover::before { opacity: 1; }
+.cardHeader { margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 2px solid #f8f9fa; }
+.cardId {
+  background: #3498db;
+  color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  font-weight: bold;
+  margin-bottom: .5rem;
+}
+.cardTitle { color: #2c3e50; font-size: 1.05rem; font-weight: 600; margin: 0 0 .5rem; line-height: 1.4; overflow-wrap: anywhere; }
+.cardBody { color: #7f8c8d; font-size: .9rem; line-height: 1.5; margin-bottom: 1rem; overflow-wrap: anywhere; }
+.cardEmail { color: #3498db; font-size: .85rem; margin-bottom: .5rem; overflow-wrap: anywhere; }
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f8f9fa;
+  font-size: .8rem;
+  color: #95a5a6;
+}
+.userBadge {
+  background: #e7f3ff;
+  color: #3498db;
+  padding: .25rem .5rem;
+  border-radius: 12px;
+  font-size: .7rem;
+  font-weight: 600;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+.paginationButton {
+  padding: .5rem 1rem;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+.paginationButton:hover:not(:disabled) { background: #2980b9; transform: translateY(-1px); }
+.paginationButton:disabled { background: #bdc3c7; cursor: not-allowed; }
+.paginationInfo { color: #7f8c8d; font-size: .9rem; }
+.emptyState { text-align: center; padding: 3rem; color: #7f8c8d; }
+.emptyStateIcon { font-size: 3rem; margin-bottom: 1rem; }
+@media (max-width: 768px) {
+  .dataGrid { grid-template-columns: 1fr; }
+  .searchContainer { flex-direction: column; width: 100%; }
+  .searchInput { min-width: 0; width: 100%; }
+  .listHeader { flex-direction: column; align-items: stretch; }
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
